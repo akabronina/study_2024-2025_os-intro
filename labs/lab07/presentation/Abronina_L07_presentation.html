@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Абронина А.К.">
+  <title>Лабораторная работа № 7</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <style type="text/css">Not found: reveal.js@4.6.1//dist/reset.css</style>
+  <style type="text/css">Not found: reveal.js@4.6.1//dist/reveal.css</style>
+  <style>
+.reveal .sourceCode { 
+overflow: visible;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">Not found: reveal.js@4.6.1//dist/theme/beige.css</style>
+  
+  
+  <span class="citation" data-cites="ignorenonframefalse">@ignorenonframefalse</span>
+  
+  
+  
+  
+  
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Лабораторная работа № 7</h1>
+  <p class="author">Абронина А.К.</p>
+  <p class="institute">Российский университет дружбы народов, Москва,
+Россия</p>
+</section>
+
+<section id="информация" class="slide level1">
+<h1>Информация</h1>
+<h2 id="докладчик">Докладчик</h2>
+<div class="columns" data-align="center">
+<div class="column" style="width:70%;">
+<ul>
+<li>Абронина Алиса Кирилловна</li>
+<li>НКАбд-01-24, с/б 1132246717</li>
+<li>Российский университет дружбы народов</li>
+<li><a href="https://github.com/akabronina/study_2024-2025_os-intro" class="uri">https://github.com/akabronina/study_2024-2025_os-intro</a></li>
+</ul>
+</div>
+</div>
+<p>::: ::::::::::::::</p>
+</section>
+<section id="цель-лабораторной-работы" class="slide level1">
+<h1>Цель лабораторной работы</h1>
+<p>Ознакомление с файловой системой Linux, её структурой, именами и
+содержанием каталогов. Приобретение практических навыков по применению
+команд для работы с файлами и каталогами, по управлению процессами (и
+работами), по проверке использования диска и обслуживанию файловой
+системы.</p>
+</section>
+<section id="задачи" class="slide level1">
+<h1>Задачи</h1>
+<ol type="1">
+<li>Выполнение команд, представленных раннее</li>
+<li>Выполнение команд</li>
+<li>Назначение прав доступа</li>
+<li>Работа с файлами и каталогами</li>
+<li>Работа с man</li>
+</ol>
+</section>
+<section id="выполнение-лабораторной-работы" class="slide level1">
+<h1>Выполнение лабораторной работы</h1>
+<h2 id="выполнение-команд-представленных-раннее">Выполнение команд,
+представленных раннее</h2>
+<p>Выполняю все примеры, приведённые в первой части описания
+лабораторной работы.</p>
+</section>
+<section class="slide level1">
+
+<figure id="fig:001">
+<img role="img" aria-label="ч1" data-src="image/1" style="width:70.0%" alt="ч1" />
+<figcaption aria-hidden="true">ч1</figcaption>
+</figure>
+</section>
+<section class="slide level1">
+
+<figure id="fig:002">
+<img role="img" aria-label="ч2" data-src="image/2" style="width:70.0%" alt="ч2" />
+<figcaption aria-hidden="true">ч2</figcaption>
+</figure>
+</section>
+<section class="slide level1">
+
+<figure id="fig:003">
+<img role="img" aria-label="ч3" data-src="image/3" style="width:70.0%" alt="ч3" />
+<figcaption aria-hidden="true">ч3</figcaption>
+</figure>
+</section>
+<section class="slide level1">
+
+<figure id="fig:004">
+<img role="img" aria-label="ч4" data-src="image/4" style="width:70.0%" alt="ч4" />
+<figcaption aria-hidden="true">ч4</figcaption>
+</figure>
+</section>
+<section class="slide level1">
+
+<figure id="fig:005">
+<img role="img" aria-label="ч5" data-src="image/5" style="width:70.0%" alt="ч5" />
+<figcaption aria-hidden="true">ч5</figcaption>
+</figure>
+</section>
+<section class="slide level1">
+
+<h2 id="выполнение-команд">Выполнение команд</h2>
+<p>Копирую файл /usr/include/sys/io.h в домашний каталог и называю
+егоequipment. В домашнем каталоге создаю директорию ~/ski.plases.
+Перемещаю файл equipment в каталог ~/ski.plases. Переименовываю файл
+~/ski.plases/equipment в ~/ski.plases/equiplist. Создаю в домашнем
+каталоге файл abc1 и копирую его в каталог ~/ski.plases, называю его
+equiplist2. Создаю каталог с именем equipment в каталоге ~/ski.plases.
+Перемещаю файлы ~/ski.plases/equiplist и equiplist2 в каталог
+~/ski.plases/equipment. Создаю и перемещаю каталог ~/newdir в каталог
+~/ski.plases и называю его plans.</p>
+</section>
+<section class="slide level1">
+
+<figure id="fig:006">
+<img role="img" aria-label="этап 2" data-src="image/6" style="width:70.0%" alt="этап 2" />
+<figcaption aria-hidden="true">этап 2</figcaption>
+</figure>
+</section>
+<section class="slide level1">
+
+<h2 id="назначение-прав-доступа">Назначение прав доступа</h2>
+<p>Определяю опции команды chmod, необходимые для того, чтобы присвоить
+перечисленным ниже файлам выделенные права доступа, считая, что в начале
+таких прав нет: drwxr–r– … australia; drwx–x–x … play; -r-xr–r– … my_os;
+-rw-rw-r– … feathers.</p>
+</section>
+<section class="slide level1">
+
+<figure id="fig:007">
+<img role="img" aria-label="этап 3" data-src="image/7" style="width:70.0%" alt="этап 3" />
+<figcaption aria-hidden="true">этап 3</figcaption>
+</figure>
+</section>
+<section class="slide level1">
+
+<h2 id="работа-с-файлами-и-каталогами">Работа с файлами и
+каталогами</h2>
+<p>Смотрю содержимое файла /etc/password. Копирую файл ~/feathers в файл
+~/file.old. Перемещаю файл ~/file.old в каталог ~/play. Копирую каталог
+~/play в каталог ~/fun. Перемещаю каталог ~/fun в каталог ~/play и
+называю его games. Лишаю владельца файла ~/feathers права на чтение. Даю
+владельцу файла ~/feathers право на чтение. Лишаю владельца каталога
+~/play права на выполнение. Даю владельцу каталога ~/play право на
+выполнение.</p>
+</section>
+<section class="slide level1">
+
+<figure id="fig:008">
+<img role="img" aria-label="этап 4 ч1" data-src="image/8" style="width:70.0%" alt="этап 4 ч1" />
+<figcaption aria-hidden="true">этап 4 ч1</figcaption>
+</figure>
+</section>
+<section class="slide level1">
+
+<figure id="fig:009">
+<img role="img" aria-label="этап 4 ч2" data-src="image/9" style="width:70.0%" alt="этап 4 ч2" />
+<figcaption aria-hidden="true">этап 4 ч2</figcaption>
+</figure>
+</section>
+<section class="slide level1">
+
+<h2 id="работа-с-man">Работа с man</h2>
+<p>Читаю man по командам mount, fsck, mkfs, kill</p>
+</section>
+<section class="slide level1">
+
+<figure id="fig:010">
+<img role="img" aria-label="mount" data-src="image/10" style="width:70.0%" alt="mount" />
+<figcaption aria-hidden="true">mount</figcaption>
+</figure>
+</section>
+<section class="slide level1">
+
+<figure id="fig:011">
+<img role="img" aria-label="fsck" data-src="image/11" style="width:70.0%" alt="fsck" />
+<figcaption aria-hidden="true">fsck</figcaption>
+</figure>
+</section>
+<section class="slide level1">
+
+<figure id="fig:012">
+<img role="img" aria-label="mkfs" data-src="image/12" style="width:70.0%" alt="mkfs" />
+<figcaption aria-hidden="true">mkfs</figcaption>
+</figure>
+</section>
+<section class="slide level1">
+
+<figure id="fig:013">
+<img role="img" aria-label="kill" data-src="image/13" style="width:70.0%" alt="kill" />
+<figcaption aria-hidden="true">kill</figcaption>
+</figure>
+</section>
+<section id="выводы" class="slide level1">
+<h1>Выводы</h1>
+<p>Я ознакомилась с файловой системой Linux, её структурой, именами и
+содержанием каталогов. Приобрела практические навыки по применению
+команд для работы с файлами и каталогами, по управлению процессами (и
+работами), по проверке использования диска и обслуживанию файловой
+системы.</p>
+</section>
+    </div>
+  </div>
+
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20reveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Freveal%2Ejs"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20reveal%2Ejs%404%2E6%2E1%2F%2Fplugin%2Fnotes%2Fnotes%2Ejs"></script>
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20reveal%2Ejs%404%2E6%2E1%2F%2Fplugin%2Fsearch%2Fsearch%2Ejs"></script>
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20reveal%2Ejs%404%2E6%2E1%2F%2Fplugin%2Fzoom%2Fzoom%2Ejs"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
